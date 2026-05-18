@@ -840,10 +840,28 @@ textarea {
     font-size: 1rem;
   }
 
-  .hero-actions,
-  .social-icons {
+  .hero-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .contact-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+
+  .contact-info-row p {
+    margin: 0;
+    white-space: nowrap;
   }
 
   .hero-actions .button {
