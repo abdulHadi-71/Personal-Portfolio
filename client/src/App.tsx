@@ -340,26 +340,14 @@ export default function App() {
         </div>
       </motion.section>
 
-      <motion.section
-        className="section projects"
-        id="projects"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
+      <section className="section projects" id="projects">
         <div className="section-header">
           <span>Projects</span>
           <h2>Featured Work</h2>
         </div>
         <div className="project-grid">
           {projects.map((project, index) => (
-            <motion.article
-              className="project-card"
-              key={`${project.title}-${index}`}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.2 }}
-            >
+            <article className="project-card" key={`${project.title}-${index}`}>
               <img src={project.image} alt={project.title} />
               <div className="project-content">
                 <h3>{project.title}</h3>
@@ -378,10 +366,10 @@ export default function App() {
                   )}
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       <motion.section
         className="section"

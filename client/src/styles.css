@@ -532,11 +532,9 @@ textarea {
   border-radius: 28px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  transition: transform 0.25s ease, border-color 0.2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
   border-color: rgba(34, 211, 238, 0.3);
 }
 
