@@ -30,30 +30,6 @@ import cvFile from "../assets/Hadi_CV.pdf";
 
 const projects = [
   {
-    title: "Luxury Ride Booking Platform (MERN)",
-    description:
-      "Developed a full MERN booking platform for luxury transportation services with secure authentication, service management, and responsive booking flow.",
-    builtOn: "MERN",
-    github: "https://github.com/abdulHadi-71/Luxury-Ride-Booking-Platform",
-    image: luxCarImage
-  },
-  {
-    title: "Ecommerce App Store (React Native)",
-    description:
-      "Built a mobile ecommerce application with API integration, checkout workflow, product browsing, and modern UI.",
-    builtOn: "React Native, Node.js, Firebase, TailwindCSS, Docker",
-    github: "https://github.com/abdulHadi-71/Ecommerce-App",
-    image: ecommerceImage
-  },
-  {
-    title: "Lodge Link (React Native)",
-    description:
-      "Created a hotel management app for bookings, guest management, and staff coordination with a polished mobile experience.",
-    builtOn: "React Native, Node.js, Firebase, TailwindCSS, Docker",
-    github: "https://github.com/abdulHadi-71/LodgeLink",
-    image: lodgeImage
-  },
-  {
     title: "Buyonix AI Ecommerce Platform - FYP",
     description:
       "Developing an AI-powered ecommerce platform with smart recommendations, virtual try-on, visual search, and multilingual chatbot support.",
@@ -71,12 +47,36 @@ const projects = [
     image: mockMindImage
   },
   {
+    title: "Luxury Ride Booking Platform (MERN)",
+    description:
+      "Developed a full MERN booking platform for luxury transportation services with secure authentication, service management, and responsive booking flow.",
+    builtOn: "MERN",
+    github: "https://github.com/abdulHadi-71/Luxury-Ride-Booking-Platform",
+    image: luxCarImage
+  },
+  {
+    title: "Ecommerce App Store (React Native)",
+    description:
+      "Built a mobile ecommerce application with API integration, checkout workflow, product browsing, and modern UI.",
+    builtOn: "React Native, Node.js, Firebase, TailwindCSS, Docker",
+    github: "https://github.com/abdulHadi-71/Ecommerce-App",
+    image: ecommerceImage
+  },
+  {
     title: "Resume Tailor AI",
     description:
       "AI-powered resume optimization tool that rewrites content and generates ATS-friendly resumes using MERN stack intelligence.",
     builtOn: "React.js, TypeScript, Node.js, Express.js, MongoDB, Tailwind",
     github: "https://github.com/abdulHadi-71/Resume-Tailor-AI",
     image: rtaImage
+  },
+  {
+    title: "Lodge Link (React Native)",
+    description:
+      "Created a hotel management app for bookings, guest management, and staff coordination with a polished mobile experience.",
+    builtOn: "React Native, Node.js, Firebase, TailwindCSS, Docker",
+    github: "https://github.com/abdulHadi-71/LodgeLink",
+    image: lodgeImage
   },
   {
     title: "Agri Support System",
@@ -271,8 +271,10 @@ export default function App() {
           </div>
           <div className="glass-card card-highlight">
             <h3>Contact</h3>
-            <p>abdullah.two00four@gmail.com</p>
-            <p>+92 337 7566667</p>
+            <div className="contact-info-row">
+              <p>abdullah.two00four@gmail.com</p>
+              <p>+92 337 7566667</p>
+            </div>
             <div className="social-icons">
               <a href="https://github.com/abdulHadi-71" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <FaGithub />
