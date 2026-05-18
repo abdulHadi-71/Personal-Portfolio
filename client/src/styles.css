@@ -51,9 +51,10 @@ textarea {
 }
 
 .page {
-  width: min(1200px, calc(100% - 2rem));
+  width: min(1200px, 100%);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 0 4rem;
+  padding: 5rem 1rem 4rem;
 }
 
 .topbar {
@@ -125,6 +126,15 @@ textarea {
 .skills-panel,
 .contact-form {
   background: linear-gradient(180deg, rgba(17, 24, 39, 0.94), rgba(15, 23, 42, 0.9));
+}
+
+.hero-copy,
+.hero-image-card,
+.glass-card,
+.experience-card,
+.skills-panel,
+.contact-form {
+  min-width: 0;
 }
 
 .hero-copy {
@@ -680,14 +690,53 @@ textarea {
   background: rgba(15, 23, 42, 0.98);
 }
 
+@media (max-width: 1080px) {
+  .page {
+    padding: 4.5rem 1rem 3rem;
+  }
+
+  .hero-copy {
+    padding: 1.6rem;
+  }
+
+  .hero-image-card {
+    padding: 1.4rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+  }
+}
+
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
   }
 
+  .experience-grid,
   .project-grid,
-  .contact-grid {
+  .contact-grid,
+  .section-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .hero-image-card,
+  .glass-card,
+  .experience-left,
+  .experience-right,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .hero-actions,
+  .social-icons,
+  .project-links {
+    justify-content: center;
+  }
+
+  .project-card img {
+    height: auto;
   }
 }
 
