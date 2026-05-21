@@ -354,11 +354,17 @@ export default function App() {
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <span className="project-tech">Built on: {project.builtOn}</span>
+                <div className="project-tech-list">
+                  {project.builtOn.split(",").map((tech) => (
+                    <span key={tech.trim()} className="project-tech-tag">
+                      {tech.trim()}
+                    </span>
+                  ))}
+                </div>
                 <div className="project-links">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer">
-                      View Code
+                    <a href={project.github} target="_blank" rel="noreferrer" className="github-button">
+                      <FaGithub /> GitHub
                     </a>
                   )}
                   {project.link && (
