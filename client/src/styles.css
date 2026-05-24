@@ -712,7 +712,6 @@ textarea {
     width: 98%;
   }
 }
-}
 
 .project-card {
   display: flex;
@@ -743,7 +742,6 @@ textarea {
 .project-card:hover img {
   transform: scale(1.06) rotate(-1deg);
   filter: brightness(1.08) saturate(1.2) drop-shadow(0 4px 24px #22d3ee44);
-}
 }
 
 .project-content {
