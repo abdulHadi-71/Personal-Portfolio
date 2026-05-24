@@ -2,7 +2,21 @@ import type { FormEvent } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt, FaDownload } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaDownload,
+  FaCode,
+  FaMobileAlt,
+  FaCloud,
+  FaRobot
+} from "react-icons/fa";
 import {
   SiOpenjdk,
   SiPython,
@@ -24,9 +38,35 @@ import ecommerceImage from "../assets/Ecom.jpg";
 import lodgeImage from "../assets/HM.jpeg";
 import buyonixImage from "../assets/Buyonix.png";
 import mockMindImage from "../assets/MockMind.png";
+
 import rtaImage from "../assets/RTAI.png";
 import agriImage from "../assets/Agri.png";
 import cvFile from "../assets/Hadi_CV.pdf";
+
+import { FaUserCheck, FaPencilRuler } from "react-icons/fa";
+
+const services = [
+  {
+    icon: <FaCode className="service-icon" />,
+    title: "Full-Stack Web Development",
+    desc: "Building modern, scalable web apps using MERN stack, REST APIs, and clean architecture.",
+  },
+  {
+    icon: <FaMobileAlt className="service-icon" />,
+    title: "Mobile App Development",
+    desc: "Cross-platform mobile apps with React Native, seamless UI/UX, and API integration.",
+  },
+  {
+    icon: <FaUserCheck className="service-icon" />,
+    title: "Requirement Engineer",
+    desc: "Gathering, analyzing, and documenting software requirements to ensure project success and alignment with business goals.",
+  },
+  {
+    icon: <FaPencilRuler className="service-icon" />,
+    title: "UI/UX Designer",
+    desc: "Designing intuitive, user-friendly interfaces and experiences for web and mobile applications.",
+  },
+];
 
 const projects = [
   {
@@ -168,6 +208,7 @@ export default function App() {
   };
 
   return (
+
     <div className="page">
       <header className={`topbar ${menuOpen ? "menu-open" : ""}`}>
         <div className="brand">Abdul Hadi</div>
@@ -178,11 +219,13 @@ export default function App() {
           <a href="#about" onClick={closeMenu}>About</a>
           <a href="#experience" onClick={closeMenu}>Experience</a>
           <a href="#projects" onClick={closeMenu}>Projects</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#skills" onClick={closeMenu}>Skills</a>
           <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
       </header>
 
+      {/* Hero Section */}
       <section className="hero" id="home">
         <motion.div
           className="hero-copy"
@@ -194,7 +237,6 @@ export default function App() {
           <h1>Abdul Hadi</h1>
           <p className="hero-subtitle">
             I’m Abdul Hadi, a MERN stack developer and software engineer focused on building modern, scalable web applications and real-time systems. I work with MongoDB, Express, React, and Node.js to develop full-stack solutions with clean architecture, performance optimization, and user-focused design. I also have experience in integrating APIs, authentication systems, and AI-powered features, along with exposure to system-level development and hardware-software workflows through academic and internship projects.
-
           </p>
           <div className="hero-actions">
             <a className="button primary" href={cvFile} target="_blank" rel="noreferrer">
@@ -244,6 +286,7 @@ export default function App() {
         </motion.div>
       </section>
 
+      {/* About Me Section - now after Hero */}
       <motion.section
         className="section about"
         id="about"
@@ -256,24 +299,23 @@ export default function App() {
           <span>About Me</span>
           <h2>Professional Profile</h2>
         </div>
-        <div className="section-grid">
-          <div className="glass-card">
-            <h3>About Me</h3>
-            <p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.2rem', justifyContent: 'center', alignItems: 'stretch', width: '100%' }}>
+          <div className="glass-card card-highlight about-card-padded" style={{ flex: '1 1 340px', minWidth: 300, maxWidth: 520, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', boxShadow: '0 8px 40px #0ea5e955' }}>
+            <p style={{ fontSize: '1.08rem', color: '#e0f7fa', fontWeight: 500, marginBottom: '0.7rem' }}>
               I am a software engineer with a passion for beautiful, responsive product experiences built with
               modern web technologies. I create performant MERN applications, mobile ecosystems, and system-level
               tools while keeping design, accessibility, and engineering best practices front and center.
             </p>
-            <p>
+            <p style={{ fontSize: '1.08rem', color: '#e0f7fa', fontWeight: 500 }}>
               I love combining strong backend architecture with polished front-end animations to deliver engaging, easy-to-use
               digital experiences.
             </p>
           </div>
-          <div className="glass-card card-highlight">
+          <div className="glass-card card-highlight about-card-padded" style={{ flex: '1 1 340px', minWidth: 300, maxWidth: 520, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
             <h3>Contact</h3>
             <div className="contact-info-row">
-              <p>abdullah.two00four@gmail.com</p>
-              <p>+92 337 7566667</p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', margin: 0 }}><FaEnvelope style={{ color: '#22d3ee', fontSize: '1.1rem' }} /> abdullah.two00four@gmail.com</p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', margin: 0 }}><FaPhone style={{ color: '#22d3ee', fontSize: '1.1rem' }} /> +92 337 7566667</p>
             </div>
             <div className="social-icons">
               <a href="https://github.com/abdulHadi-71" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -292,6 +334,23 @@ export default function App() {
           </div>
         </div>
       </motion.section>
+
+      {/* Services Section - now after About Me */}
+      <section className="services-section" id="services">
+        <div className="services-header">
+          <span style={{ letterSpacing: 2, fontWeight: 600, color: '#e0f7fa' }}>Services</span>
+          <h2 style={{ fontSize: '2.1rem', margin: '0.5rem 0 1.2rem 0', color: '#fff' }}>What I Offer</h2>
+        </div>
+        <div className="services-list">
+          {services.map((service, idx) => (
+            <div className="service-card" key={idx}>
+              {service.icon}
+              <div className={`service-title${service.title === 'Full-Stack Web Development' || service.title === 'Mobile App Development' ? ' center-title' : ''}`}>{service.title}</div>
+              <div className="service-desc">{service.desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <motion.section
         className="section experience-section"
@@ -392,10 +451,7 @@ export default function App() {
           <h2>Technical Toolbox</h2>
         </div>
         <div className="skills-panel glass-card">
-          <p>
-            Skills move automatically and include logos for each technology. This section highlights the
-            core languages, frameworks, and tools I use every day.
-          </p>
+          
           <div className="skills-slider">
             {skillItems.concat(skillItems).map((skill, index) => {
               const Icon = skill.icon;
