@@ -623,7 +623,6 @@ textarea {
   object-fit: cover;
   border-radius: 50%;
 }
-}
 
 .hero-profile-summary {
   color: var(--text-muted);
@@ -651,7 +650,7 @@ textarea {
   font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
-.section-grid,
+.section-grid {
   display: grid;
   gap: 2.2rem;
 }
